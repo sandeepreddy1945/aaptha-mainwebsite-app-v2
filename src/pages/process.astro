@@ -1,0 +1,137 @@
+---
+import SingleBrand from '~/components/common/SingleBrand.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Aaptha Elder Care Services',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
+  <Hero tagline="Aaptha Elder Care">
+    <Fragment slot="title">
+      <span class="xl:inline">Our Selection</span>
+      <span class="text-accent dark:text-white highlight"> Process </span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="sm:inline">
+        <span class="font-semibold">At Aaptha</span>, We understand that when you entrust your most loved ones into our
+        hands, you trusted in our ability to care for them. We appreciate that trust and promise to not let you down. To
+        that end, we go through a stringent hiring and training process to qualify volunteers and fully equip them with
+        the necessary skills for the best possible outcome.</span
+      >
+    </Fragment>
+  </Hero>
+
+  <Steps
+    title="Our Hiring Process"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Aadhar Verification</span>',
+        description: 'Aadhar Card Residence address Verification.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Referrals</span>',
+        description: 'Referrals (local Govt officials - Sarpanch, Mandal president, etc.).',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Background Check </span>',
+        description: 'Third-party criminal background check.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Interview process!',
+        icon: 'tabler:check',
+        description:
+          'A rigorous interview is conducted to ensure the volunteer is truly passionate about caregiving to the elderly, behavior evaluation thru psychometric tests, and careful observations with a personal interview. Applicants who successfully pass through all these evaluations will go through a diligent training program.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/aaptha-19.png',
+      alt: 'Steps image',
+    }}
+  >
+    <Fragment slot="subtitle">
+      <span class="sm:inline">
+        <span class="font-semibold">At Aaptha</span>,All applicants go through a 4-stage verification process prior to
+        being interviewed. We verify them through appropriate channels.</span
+      >
+    </Fragment>
+  </Steps>
+
+  <Content
+    id="about"
+    image={{
+      src: '~/assets/images/aaptha-25.png',
+      alt: 'Colorful Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl">Training</h2>
+      <p>
+        Aaptha partnered with Joy Foundation, a similar non-profit organization run by <span
+          class="text-accent dark:text-white highlight"
+        >
+          Dr. Raj Kumar - a social activist.
+        </span> Dr. Raj Kumar is highly regarded for his voluntary services, he conducts medical camps every Saturday at his
+        village Padakal and runs an old-age home in Madhapur. This partnership gave us access to a well-established training
+        infrastructure including training caregivers at the hospital, nursing home, and an old-age facility.
+      </p>
+      <br />
+      <p>
+        Additionally, orientation sessions are conducted on the importance of the elderly service, respect their needs,
+        acknowledge and understand their problems and provide emotional support.
+      </p>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features2
+    tagline="Aaptha Elder Care"
+    title="Skills Trained"
+    subtitle="Below is a list of sample functions volunteers are trained on."
+    columns={4}
+    items={[
+      {
+        title: 'Check Vitals',
+      },
+      {
+        title: ' First Aid',
+      },
+      {
+        title: 'Tube Feed',
+      },
+      {
+        title: 'Bed Making',
+      },
+      {
+        title: 'IV and MV Insulin Injection',
+      },
+      {
+        title: 'Wounds - Cleaning And Dressing',
+      },
+      {
+        title: 'Manage Urine Pipes',
+      },
+      {
+        title: 'Physiotherapy',
+      },
+    ]}
+  />
+</Layout>

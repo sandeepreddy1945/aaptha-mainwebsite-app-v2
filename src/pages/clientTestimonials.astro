@@ -1,0 +1,68 @@
+---
+import SingleBrand from '~/components/common/SingleBrand.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Aaptha Elder Care Services',
+  ignoreTitleTemplate: true,
+};
+---
+
+<!-- Testimonials Widget *********** -->
+<Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
+  <Testimonials
+    tagline="Aaptha Elder Care"
+    title="Client Testimonials"
+    subtitle="Discover what clients have to say about their experiences working with our Hero's."
+    testimonials={[
+      {
+        testimonial: `I can't begin to express the amount of gratitude I have in Aaptha Services in helping us find the best care giver. Making a decision to look outside help for the family is hard but they make it easy by finding the best. They are delight to work with and their services are invaluable. Highly recommend Aaptha Services if one ever need to find an eldercare companionship services for their parent or loved ones.`,
+        name: 'Raj Yemul',
+        job: 'Client',
+      },
+      {
+        testimonial: `We used the aptha services in hyd in July Aug 2022 for taking care of my mother in Hyderabad. The girl who stayed with her Binnu was extremely helpful and friendly. I will strongly recommend this company.`,
+        name: 'Manu Srinivasan',
+        job: 'Client',
+      },
+      {
+        testimonial: `I am Chandana, we have approached Aaptha eldercare for our grandmother, and have been the customer for past one month. Our experience in this one month with Aaptha services was too good . They have provided a very good care taker who is very caring and humble. They have been extremely helpful in taking care of our grandmother and her chores.Aaptha has been excellent and very professional till now. And hope we would continue to receive the same best service further. Thankyou Aaptha for providing such an excellent service in time of need. Keep up the good work. We would definitely recommend Aaptha eldercare services for everyone who are in need of elder care.`,
+        name: 'Chandana Saradhi',
+        job: 'Client',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Want to Join Us?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register Now',
+        href: '/',
+      },
+      {
+        variant: 'secondary',
+        text: 'Contact Us',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  />
+
+  <BlogLatestPosts
+    id="blog"
+    title="Explore insightful articles On Our Blog"
+    information={`Explore the Insightful Articles about our Hero's and the Programs Happening around on our Blog`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

@@ -1,30 +1,38 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
+import SingleBrand from '~/components/common/SingleBrand.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Contact',
-  description:
-    'Contact page demo built with AstroWind: a form, contact details and support links in one accessible layout.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <!--Decide if we need aaptha logo in contact page -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText tagline="Aaptha Elder Care" title="Let's Connect!" />
 
   <ContactUs
     id="form"
     title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, call us on 9700522316 or the Email Provided Below."
     inputs={[
       {
         type: 'text',
         name: 'name',
         label: 'Name',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: 'Phone',
       },
       {
         type: 'email',
@@ -48,32 +56,17 @@ const metadata = {
     title="We are here to help!"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
+        title: 'Phone: +91 9700522316',
         icon: 'tabler:headset',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
+        title: 'Email: info@aapthacare.com',
         icon: 'tabler:mail',
       },
       {
         title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+        description:
+          'Aaptha Care, Plot No: 2-22-2-82 Vasista Enclave . Flat no 205 Opp to Kavya Hospitals 3rd lane ,backside to South India Shopping mall. KPHB Hyderabad.',
         icon: 'tabler:map-pin',
       },
     ]}

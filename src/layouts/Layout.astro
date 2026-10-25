@@ -13,6 +13,7 @@ import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import Intersect from '~/components/common/Intersect.astro';
+import Chat from '~/components/ui/chat/Chat';
 
 // Comment the line below to disable View Transitions
 import { ClientRouter } from 'astro:transitions';
@@ -52,5 +53,6 @@ const { language, textDirection } = I18N;
     <slot />
 
     <Intersect />
+    <Chat client:load />
   </body>
 </html>

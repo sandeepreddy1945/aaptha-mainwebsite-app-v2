@@ -4,6 +4,8 @@
 
 /* shadcn/ui-compatible tokens derived from the --aw-* variables. */
 @import './shadcn.css';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @variant dark (&:where(.dark, .dark *));
 

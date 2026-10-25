@@ -1,0 +1,114 @@
+---
+import SingleBrand from '~/components/common/SingleBrand.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Aaptha Elder Care Services',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
+  <Hero
+    id="hero"
+    title="120+ Services Across Hyderabad"
+    tagline="Aaptha Elder Care"
+    actions={[{ variant: 'primary', text: 'Contact Us', href: getPermalink('/contact') }]}
+  >
+    <Fragment slot="subtitle">
+      From 2021 April to July 2023, We provided 120 services across Hyderabad, Warangal, Mahbubnagar, Karimnagar, and
+      Bangalore. We feel very proud and happy that we are on our mission and vision. Providing a quality service to
+      seniour citizens parallelly employment opportunity to un-employeed men,women, divorced,widowed.
+    </Fragment>
+  </Hero>
+
+  <Content
+    title="Our Active services In Hyderabad"
+    items={[]}
+    image={{
+      src: '~/assets/images/aaptha-16.png',
+      alt: 'Locations Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl">
+        Our Foot Print In More than 20+ Locations.
+      </h3>
+      We have our Services at 20+ different localities in Hyderabad apart from Other Districts, This shows We are not Restricted
+      to one place.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    isReversed
+    title="12 Elders completed 1 Year Service with Aaptha"
+    items={[]}
+    image={{
+      src: '~/assets/images/aaptha-17.png',
+      alt: '1 Year Service Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl">
+        Our Dearest Clients Who Completed 1 Year With Us
+      </h3>
+      From 2021 September till 2023 July we gave services to 12 different elders who completed 1 year of service with Aaptha
+      eldercare. There 10 more different elder who are going to complete 1 year service in next 2-3 months. This shows our
+      dedication towards service to elders. Unfortunately we lost 30+ elders through age related issues.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    title="15+ Caregivers completed 1 year Journey Aaptha"
+    items={[]}
+    image={{
+      src: '~/assets/images/aaptha-18.png',
+      alt: '1 Year Employee Service Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="mb-2 text-2xl font-bold tracking-tight dark:text-white sm:text-3xl">Our Heroes</h3>
+      We were able to provide empolyment for 15 Employees who completed 1 year of Journey with Aaptha Eldercare who choosen
+      caregiver as their career path. There are 10 plus caregivers who will complete 1 year journey in next 2-3 months.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <CallToAction
+    title="Want to Join Us?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register Now',
+        href: '/',
+      },
+      {
+        variant: 'secondary',
+        text: 'Contact Us',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  />
+
+  <!-- TODO include a new component with swiper to courasel the member photos. -->
+</Layout>

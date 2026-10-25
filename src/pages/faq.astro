@@ -1,0 +1,56 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import SingleBrand from '~/components/common/SingleBrand.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'FAQ',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
+  <FAQs
+    title="Frequently Asked Questions"
+    tagline="Aaptha Elder Care"
+    classes={{ container: 'max-w-6xl' }}
+    columns={1}
+    collapsible={false}
+    items={[
+      {
+        title: 'Who Are Our Care Companions?',
+        description: "Our companions would be a student, housewife, employee etc for  social NGO's",
+      },
+      {
+        title: 'How Do We Select Care Companions?',
+        description:
+          'Having a personal interest to do service to the society or people will be the 1st qualification for our companions. We mostly select people who are working for NGO’s.',
+      },
+      {
+        title: "How Do We Check Care Companion's Background?",
+        description:
+          'Even though we are non profit organization and our care companions are from social ngo’s we never compromise in terms of safety and security of our clients. We take a long process while hiring our care companions, We will be taking  all the personal information, family background, referrals contact, A test will be conducted to know their behaviour and personality assessment, We do criminal background check with the help of a  3rd party agency .',
+      },
+    ]}
+  />
+
+  <CallToAction
+    title="Want to Join Us?"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Register Now',
+        href: '/',
+      },
+      {
+        variant: 'secondary',
+        text: 'Contact Us',
+        href: getPermalink('/contact'),
+      },
+    ]}
+  />
+</Layout>

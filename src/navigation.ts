@@ -1,46 +1,33 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getAsset, getHomePermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      text: 'Home',
+      href: getHomePermalink(),
     },
     {
-      text: 'Pages',
+      text: 'More',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'About us',
+          href: getPermalink('/#aboutUs'),
         },
         {
           text: 'Services',
           href: getPermalink('/services'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'FAQ',
+          href: getPermalink('/faq'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: 'Progress Since 2021',
+          href: getPermalink('/progress'),
+        },
+        {
+          text: 'Selection Process',
+          href: getPermalink('/process'),
         },
         {
           text: 'Contact',
@@ -57,100 +44,44 @@ export const headerData = {
       ],
     },
     {
-      text: 'Landing',
+      text: 'Aaptha Stories',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'Client Testimonials',
+          href: getPermalink('/clientTestimonials'),
         },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      links: [
         {
           text: 'Blog List',
           href: getBlogPermalink(),
         },
-        {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
-        },
       ],
     },
+    {
+      text: 'Careers',
+      href: getPermalink('/careers'),
+    },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [{ text: 'Contact Us', href: getPermalink('/contact') }],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
-      links: [
-        { text: 'Features', href: getPermalink('/#features') },
-        { text: 'Pricing', href: getPermalink('/pricing') },
-        { text: 'Services', href: getPermalink('/services') },
-        { text: 'Blog', href: getBlogPermalink() },
-      ],
-    },
-    {
-      title: 'Demos',
-      links: [
-        { text: 'SaaS', href: getPermalink('/homes/saas') },
-        { text: 'Startup', href: getPermalink('/homes/startup') },
-        { text: 'Mobile App', href: getPermalink('/homes/mobile-app') },
-        { text: 'Personal', href: getPermalink('/homes/personal') },
-        { text: 'Landing pages', href: getPermalink('/landing/lead-generation') },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { text: 'Documentation', href: 'https://github.com/arthelokyo/astrowind#readme' },
-        { text: 'Skills for AI agents', href: 'https://github.com/arthelokyo/astrowind/tree/main/.agents/skills' },
-        { text: 'Releases', href: 'https://github.com/arthelokyo/astrowind/releases' },
-        { text: 'Discussions', href: 'https://github.com/arthelokyo/astrowind/discussions' },
-      ],
-    },
-    {
       title: 'Company',
       links: [
-        { text: 'About', href: getPermalink('/about') },
+        { text: 'Home', href: getPermalink('/') },
+        { text: 'About', href: getPermalink('/#aboutUs') },
+        { text: 'Blog', href: getBlogPermalink() },
+        { text: 'Careers', href: getPermalink('/careers') },
+        { text: 'Services', href: getPermalink('/services') },
+      ],
+    },
+    {
+      title: 'Support',
+      links: [
         { text: 'Contact', href: getPermalink('/contact') },
-        { text: 'Report an issue', href: 'https://github.com/arthelokyo/astrowind/issues' },
-        { text: 'License', href: 'https://github.com/arthelokyo/astrowind/blob/main/LICENSE.md' },
+        { text: 'Register', href: getPermalink('/careers#registrationForm') },
+        { text: 'FAQ', href: getPermalink('/faq') },
       ],
     },
   ],
@@ -159,10 +90,40 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/AapthaC', target: '_blank' },
+    {
+      ariaLabel: 'Instagram',
+      icon: 'tabler:brand-instagram',
+      href: 'https://www.instagram.com/aapthacare',
+      target: '_blank',
+    },
+    {
+      ariaLabel: 'Facebook',
+      icon: 'tabler:brand-facebook',
+      href: 'https://www.facebook.com/Aapthaeldercare',
+      target: '_blank',
+    },
+    {
+      ariaLabel: 'LinkedIn',
+      icon: 'tabler:brand-linkedin',
+      href: 'https://www.linkedin.com/company/aaptha-eldercare-service',
+      target: '_blank',
+    },
+    {
+      ariaLabel: 'Google Map',
+      icon: 'tabler:brand-google-maps',
+      href: 'https://www.google.com/maps/dir/?api=1&destination=500080',
+      target: '_blank',
+    },
+    {
+      ariaLabel: 'Github',
+      icon: 'tabler:brand-github',
+      href: 'https://github.com/sandeepreddy1945/aaptha-main-website-app',
+      target: '_blank',
+    },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml'), target: '_blank' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://arthelokyo.com"> Arthelokyo</a> · All rights reserved.
+    ©2021 by Aaptha Elder-Care Services · All rights reserved.
   `,
 };

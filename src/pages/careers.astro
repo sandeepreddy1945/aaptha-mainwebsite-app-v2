@@ -1,0 +1,65 @@
+---
+import SingleBrand from '~/components/common/SingleBrand.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Register from '~/components/widgets/Register.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Careers',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Custom Component Single Brand Logo -->
+  <SingleBrand image={{ src: '~/assets/images/aaptha.png', alt: 'Aaptha Brand Logo' }} />
+
+  <Hero
+    tagline="Aaptha Elder Care"
+    title="Come Join Our Team!"
+    image={{
+      src: '~/assets/images/aaptha-26.png',
+      alt: 'Aaptha Hero Image',
+    }}
+  />
+
+  <Register
+    id="registrationForm"
+    title="Register To Work with Us!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, call us on 9700522316 or the Email Provided Below."
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+    button="Register Now"
+  />
+
+  <Steps2
+    title="Reach out to us"
+    subtitle="Have questions? Feel free to contact us on the following forums!"
+    callToAction={{
+      text: 'Contact us',
+      href: getPermalink('/contact'),
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'info@aapthacare.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+91 9700522316',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Locate us',
+        description:
+          "<a href='https://www.google.com/maps/dir/?api=1&destination=500080' target='_blank' class='underline'>Click Here! To Navigate</a>",
+        icon: 'tabler:map',
+      },
+    ]}
+  />
+</Layout>
